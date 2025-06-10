@@ -1,24 +1,31 @@
 import { Injectable } from '@nestjs/common';
-import { Context, Telegraf } from 'telegraf';
-import { InjectBot } from 'nestjs-telegraf';
+import { Context } from 'telegraf';
+import { Ctx, Start, Update } from 'nestjs-telegraf';
 
+@Update()
 @Injectable()
 export class TelegramService {
-  constructor(@InjectBot() private readonly bot: Telegraf<Context>) {}
+  @Start()
+async onStart(@Ctx() ctx: Context) {
+  await ctx.replyWithHTML(
+    `<b>👋 Assalomu alaykum, ${ctx.from?.first_name || 'foydalanuvchi'}!</b>\n\n` +
+    `📚 Bizning ta'lim platformamizga xush kelibsiz!\n` +
+    `Quyidagi tugma orqali ilovamizga o'tishingiz mumkin:\n\n` +
+    `✅ <i>Har qanday qurilmada ishlaydi</i>\n` +
+    `🔒 <i>Ma'lumotlaringiz xavfsiz himoyalangan</i>`,
+    {
+      reply_markup: {
+        inline_keyboard: [
+          [
+            {
+              text: '📲 Ilovani ochish',
+              url: 'https://t.me/sevenedubot/seveneduwebapp',
+            },
+          ],
+        ],
+      },
+    },
+  );
+}
 
-  async startBot() {
-    this.bot.start(async (ctx) => {
-      await ctx.reply('Assalomu alaykum!', {
-        reply_markup: {
-          inline_keyboard: [
-            [{
-              text: 'Ilovani ochish',
-              
-              web_app: { url: 'https://t.me/sevenedubot/seveneduwebapp' }
-            }]
-          ]
-        }
-      });
-    });
-  }
 }
