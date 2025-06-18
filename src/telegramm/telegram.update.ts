@@ -5,7 +5,7 @@ import { Context } from 'telegraf';
 export class BotUpdate {
   @Start()
   async startCommand(@Ctx() ctx: Context) {
-    const webAppUrl = 'https://7-edu-client-eight.vercel.app/';
+    const webAppUrl = 'https://t.me/sevenedubot/seveneduwebapp';
 
     await ctx.reply('Ilovani ochish uchun tugmani bosing:', {
       reply_markup: {
