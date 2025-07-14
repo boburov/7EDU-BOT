@@ -92,7 +92,7 @@ bot.on("text", async (ctx) => {
 ✅ <b>Afzalliklari:</b>
 ${formattedAdvantages}
 
-💰 <b>Narxi:</b> ${Number(price).toLocaleString("uz-UZ")} so‘m
+💰 <b>Narxi:</b> 800.8000 so‘m
   `.trim();
 
   await ctx.replyWithPhoto(
