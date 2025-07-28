@@ -104,7 +104,7 @@ ${formattedAdvantages}
         [
           Markup.button.url(
             "📥 Kursga o‘tish",
-            `https://t.me/sevenedubot/seveneduwebapp`
+            `https://t.me/sevenedubot/seven`
           ),
           Markup.button.url(
             "Kurs buyurtma berish",
