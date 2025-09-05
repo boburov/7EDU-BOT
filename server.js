@@ -14,13 +14,13 @@ bot.start((ctx) => {
   const firstName = ctx.from.first_name || "Foydalanuvchi";
   ctx.replyWithHTML(
     `👋 <b>Assalomu alaykum, ${firstName}!</b>\n\n` +
-    `🤖 Siz <b>7EDU AI Platformasi</b> botidasiz.\n\n` +
-    `🎯 Bu yerda siz:\n` +
-    `📚 <b>Kurslarga yozilasiz</b>\n` +
-    `🧠 <b>Yangi so‘zlarni o‘rganasiz</b>\n` +
-    `📝 <b>Testlar yechib, bilim darajangizni oshirasiz</b>\n` +
-    `🎓 <b>Imtihon topshirib, sertifikat olasiz</b>\n\n` +
-    `⬇️ Davom etish uchun menyudan birini tanlang:`,
+      `🤖 Siz <b>7EDU AI Platformasi</b> botidasiz.\n\n` +
+      `🎯 Bu yerda siz:\n` +
+      `📚 <b>Kurslarga yozilasiz</b>\n` +
+      `🧠 <b>Yangi so‘zlarni o‘rganasiz</b>\n` +
+      `📝 <b>Testlar yechib, bilim darajangizni oshirasiz</b>\n` +
+      `🎓 <b>Imtihon topshirib, sertifikat olasiz</b>\n\n` +
+      `⬇️ Davom etish uchun menyudan birini tanlang:`,
     mainKeyboard
   );
 });
@@ -49,7 +49,8 @@ bot.hears("📝 Mavjud kurslar", async (ctx) => {
           else if (t.includes("rus")) emoji = "🇷🇺";
           else if (t.includes("arab")) emoji = "🇸🇦";
           else if (t.includes("so'z") || t.includes("vocab")) emoji = "🧠";
-          else if (t.includes("gaplashish") || t.includes("speaking")) emoji = "🗣️";
+          else if (t.includes("gaplashish") || t.includes("speaking"))
+            emoji = "🗣️";
           else if (t.includes("grammar")) emoji = "📚";
           else if (t.includes("test") || t.includes("imtihon")) emoji = "📋";
 
@@ -109,9 +110,9 @@ ${formattedAdvantages}
           Markup.button.url(
             "Kurs buyurtma berish",
             `https://t.me/GraffDracula?text=Assalomu%20alaykum%2C%20men%20${title}%20kursini%20sotib%20olmoqchiman.`
-          )
-        ]
-      ])
+          ),
+        ],
+      ]),
     }
   );
 });
